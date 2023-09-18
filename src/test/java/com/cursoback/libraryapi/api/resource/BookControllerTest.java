@@ -4,6 +4,7 @@ import com.cursoback.libraryapi.api.dto.BookDTO;
 import com.cursoback.libraryapi.exception.BusinessException;
 import com.cursoback.libraryapi.model.entity.Book;
 import com.cursoback.libraryapi.service.BookService;
+import com.cursoback.libraryapi.service.LoanService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
@@ -44,7 +45,10 @@ public class BookControllerTest {
     MockMvc mvc;
 
     @MockBean
-    BookService service;
+    private BookService service;
+
+    @MockBean
+    private LoanService loanService;
 
     @Test
     @DisplayName("Deve criar um livro com sucesso.")
